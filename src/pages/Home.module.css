@@ -1,11 +1,194 @@
 .container {
+  padding: 2rem 6rem 2rem 6rem;
   font-family: "Simplon Norm", sans-serif;
-  font-weight: 400;
-  color: red;
 }
 
-h1 {
-  font-family: "Inter", sans-serif;
+.heroWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #252020;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.heading {
+  letter-spacing: 3px;
+}
+
+.heroWrapper p,
+.heroWrapper h1 {
+  max-width: 40%;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.boldText {
   font-weight: 700;
-  color: blue;
+  font-size: smaller;
+}
+
+.filterBtnWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: smaller;
+}
+
+.rightArrow {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.leftArrow {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.downArrow {
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.upArrow {
+  transform: rotate(270deg);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.filterBtn {
+  text-decoration: underline;
+  color: #888792;
+  cursor: pointer;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownButton {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 160px;
+  gap: 0.25rem;
+  font-weight: 700;
+  justify-content: space-between;
+}
+
+.dropdownOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 1rem;
+}
+
+.dropdownOption {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 14px;
+}
+
+.dropdownOption:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .dropdownButton,
+  .dropdownOption {
+    width: 100%;
+  }
+}
+
+.filters {
+  width: 92rem;
+}
+
+.filterWrapper2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  font-weight: 700;
+  padding: 1.5rem 0 1rem 0;
+  cursor: pointer;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 1rem 0;
+  border-bottom: 1px solid #e5e5e5;
+  gap: 0.5rem;
+}
+
+.filterWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterHeading {
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: smaller;
+  padding-bottom: 0.5rem;
+}
+
+.filter1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.labelText {
+  font-size: smaller;
+  text-decoration: underline;
+  color: #bfc8cd;
+}
+
+.wrap {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
 }

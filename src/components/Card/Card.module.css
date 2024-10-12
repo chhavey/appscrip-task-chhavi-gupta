@@ -1,0 +1,51 @@
+.card {
+  width: 300px;
+  border-radius: 10px;
+  font-family: "Simplon Norm", sans-serif;
+  padding: 0.5rem;
+}
+.card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  font-weight: 700;
+  color: #252020;
+  text-transform: uppercase;
+}
+
+.pricingSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888792;
+  font-size: smaller;
+}
+.signInText {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.heartIcon {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.heartPath {
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.heartIcon:hover .heartPath {
+  fill: #eb4c6b;
+  stroke: none;
+}
