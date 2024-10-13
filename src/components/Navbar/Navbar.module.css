@@ -56,3 +56,7 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+.icons buttons {
+  border: none;
+}

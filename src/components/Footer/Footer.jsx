@@ -12,25 +12,33 @@ import { ReactComponent as ShopPay } from "../../assets/shoppay.svg";
 
 function Footer() {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.subscribe}>
+        <section className={styles.subscribe}>
           <h2 className={styles.heading}>BE THE FIRST TO KNOW</h2>
           <p className={styles.text}>Sign up for updates from mettā muse.</p>
           <div className={styles.emailContainer}>
             <input
               className={styles.input}
-              type="text"
+              type="email"
               placeholder="Enter your email..."
+              aria-label="Email input"
             />
-            <button className={styles.button}>SUBSCRIBE</button>
+            <button className={styles.button} aria-label="Subscribe">
+              SUBSCRIBE
+            </button>
           </div>
-        </div>
-        <div className={styles.contactWrapper}>
+        </section>
+
+        <section className={styles.contactWrapper}>
           <div className={styles.contact}>
             <h2 className={styles.heading}>CONTACT US</h2>
-            <div className={styles.text}>+44 221 133 5360</div>
-            <div className={styles.text}>customercare@mettamuse.com</div>
+            <div className={styles.text} aria-label="Phone number">
+              +44 221 133 5360
+            </div>
+            <div className={styles.text} aria-label="Email address">
+              customercare@mettamuse.com
+            </div>
           </div>
           <div className={styles.currency}>
             <h2 className={styles.heading}>CURRENCY</h2>
@@ -42,8 +50,9 @@ function Footer() {
               is available on hover.
             </div>
           </div>
-        </div>
+        </section>
       </div>
+
       <div className={styles.menu}>
         <div className={styles.menu1}>
           <div className={styles.submenu}>
@@ -75,23 +84,29 @@ function Footer() {
             <div className={styles.contact}>
               <h2 className={styles.heading}>FOLLOW US</h2>
               <div className={styles.currencyText}>
-                <Instagram /> <LinkedIn />
+                <Instagram aria-label="Instagram" />{" "}
+                <LinkedIn aria-label="LinkedIn" />
               </div>
             </div>
             <div className={styles.currency}>
               <h2 className={styles.heading}>mettā muse ACCEPTS</h2>
               <div className={styles.currencyText}>
-                <Gpay /> <Mastercard /> <Paypal /> <Amex /> <ApplePay />{" "}
-                <ShopPay />
+                <Gpay aria-label="Google Pay" />{" "}
+                <Mastercard aria-label="Mastercard" />{" "}
+                <Paypal aria-label="Paypal" />{" "}
+                <Amex aria-label="American Express" />{" "}
+                <ApplePay aria-label="Apple Pay" />{" "}
+                <ShopPay aria-label="Shop Pay" />
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className={styles.copyright}>
         Copyright © 2023 mettamuse. All rights reserved.
       </div>
-    </div>
+    </footer>
   );
 }
 

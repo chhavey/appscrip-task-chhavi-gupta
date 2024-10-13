@@ -10,7 +10,7 @@ import { ReactComponent as Arrow } from "../../assets/arrow.svg";
 
 function Navbar() {
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar} aria-label="Main Navigation">
       <div className={styles.marquee}>
         <div className={styles.marqueeWrapper}>
           <Marquee /> Lorem ipsum dolor
@@ -23,15 +23,16 @@ function Navbar() {
         </div>
       </div>
       <div className={styles.logo}>
-        <Logo />
+        <Logo aria-label="Company Logo" />
         <h1 className={styles.heading}>LOGO</h1>
         <div className={styles.icons}>
-          <Search />
-          <Heart />
-          <Bag />
-          <Profile />
+          <Search aria-label="Search" />
+          <Heart aria-label="Favorites" />
+          <Bag aria-label="Shopping Bag" />
+          <Profile aria-label="Profile" />
           <div className={styles.language}>
-            ENG <Arrow className={styles.downArrow} />
+            ENG{" "}
+            <Arrow className={styles.downArrow} aria-label="Select Language" />
           </div>
         </div>
       </div>
@@ -42,7 +43,7 @@ function Navbar() {
         <div className={styles.menuItem}>ABOUT</div>
         <div className={styles.menuItem}>CONTACT US</div>
       </div>
-    </div>
+    </nav>
   );
 }
 

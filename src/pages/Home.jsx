@@ -57,10 +57,16 @@ function Home() {
             <div className={styles.filterBtnWrapper}>
               <Arrow
                 className={showFilters ? styles.leftArrow : styles.rightArrow}
+                aria-hidden="true"
               />
               <div
                 className={styles.filterBtn}
                 onClick={() => setShowFilters(!showFilters)}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) =>
+                  e.key === "Enter" && setShowFilters(!showFilters)
+                }
               >
                 {showFilters ? "HIDE FILTER" : "SHOW FILTER"}
               </div>
@@ -71,10 +77,16 @@ function Home() {
               <div
                 className={styles.dropdownButton}
                 onClick={() => setShowDropdown(!showDropdown)}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) =>
+                  e.key === "Enter" && setShowDropdown(!showDropdown)
+                }
               >
                 {selectedOption}
                 <Arrow
                   className={showDropdown ? styles.upArrow : styles.downArrow}
+                  aria-hidden="true"
                 />
               </div>
               {showDropdown && (
@@ -84,6 +96,8 @@ function Home() {
                       key={option}
                       className={styles.dropdownOption}
                       onClick={() => handleSelectOption(option)}
+                      role="option"
+                      aria-selected={option === selectedOption}
                     >
                       {option === selectedOption && <Check />}
                       {option}
@@ -99,7 +113,7 @@ function Home() {
           {showFilters && (
             <div className={styles.filters}>
               <div className={styles.filterWrapper2}>
-                <Checkbox /> CUSTOMIZABLE
+                <Checkbox aria-hidden="true" /> CUSTOMIZABLE
               </div>
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
@@ -107,6 +121,7 @@ function Home() {
                   <Arrow
                     className={showIdealFor ? styles.upArrow : styles.downArrow}
                     onClick={handleFilter1}
+                    aria-hidden="true"
                   />
                 </div>
                 <div className={styles.subtitle}>All</div>
@@ -115,13 +130,13 @@ function Home() {
                   <div className={styles.filter1}>
                     <div className={styles.labelText}> Unselect all</div>
                     <div className={styles.wrap}>
-                      <Checkbox /> Men
+                      <Checkbox aria-hidden="true" /> Men
                     </div>
                     <div className={styles.wrap}>
-                      <Checkbox /> Women
+                      <Checkbox aria-hidden="true" /> Women
                     </div>
                     <div className={styles.wrap}>
-                      <Checkbox /> Baby G Kids
+                      <Checkbox aria-hidden="true" /> Baby G Kids
                     </div>
                   </div>
                 )}
@@ -129,49 +144,49 @@ function Home() {
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
                   <div className={styles.filterHeading}>OCCASION</div>{" "}
-                  <Arrow className={styles.downArrow} />
+                  <Arrow className={styles.downArrow} aria-hidden="true" />
                 </div>
                 <div className={styles.subtitle}>All</div>
               </div>
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
                   <div className={styles.filterHeading}>WORK</div>{" "}
-                  <Arrow className={styles.downArrow} />
+                  <Arrow className={styles.downArrow} aria-hidden="true" />
                 </div>
                 <div className={styles.subtitle}>All</div>
               </div>
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
                   <div className={styles.filterHeading}>FABRIC</div>{" "}
-                  <Arrow className={styles.downArrow} />
+                  <Arrow className={styles.downArrow} aria-hidden="true" />
                 </div>
                 <div className={styles.subtitle}>All</div>
               </div>
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
                   <div className={styles.filterHeading}>SEGMENT</div>{" "}
-                  <Arrow className={styles.downArrow} />
+                  <Arrow className={styles.downArrow} aria-hidden="true" />
                 </div>
                 <div className={styles.subtitle}>All</div>
               </div>
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
                   <div className={styles.filterHeading}>SUITABLE FOR</div>{" "}
-                  <Arrow className={styles.downArrow} />
+                  <Arrow className={styles.downArrow} aria-hidden="true" />
                 </div>
                 <div className={styles.subtitle}>All</div>
               </div>
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
                   <div className={styles.filterHeading}>RAW MATERIALS</div>{" "}
-                  <Arrow className={styles.downArrow} />
+                  <Arrow className={styles.downArrow} aria-hidden="true" />
                 </div>
                 <div className={styles.subtitle}>All</div>
               </div>
               <div className={styles.filterContainer}>
                 <div className={styles.filterWrapper}>
                   <div className={styles.filterHeading}>PATTERN</div>{" "}
-                  <Arrow className={styles.downArrow} />
+                  <Arrow className={styles.downArrow} aria-hidden="true" />
                 </div>
                 <div className={styles.subtitle}>All</div>
               </div>
