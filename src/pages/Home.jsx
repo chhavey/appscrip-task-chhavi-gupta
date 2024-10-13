@@ -42,6 +42,10 @@ function Home() {
     <>
       <Navbar />
       <div className={styles.container}>
+        <div className={styles.menu}>
+          HOME&nbsp;&nbsp;|&nbsp;&nbsp;<span>SHOP</span>
+        </div>
+
         <div className={styles.heroWrapper}>
           <h1 className={styles.heading}>DISCOVER OUR PRODUCTS</h1>
           <p>
@@ -52,6 +56,7 @@ function Home() {
         </div>
 
         <div className={styles.controls}>
+          <div className={styles.mobileLeft}>FILTER</div>
           <div className={styles.leftControls}>
             <span className={styles.boldText}>{products.length} ITEMS</span>
             <div className={styles.filterBtnWrapper}>

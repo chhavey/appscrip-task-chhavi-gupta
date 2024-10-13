@@ -7,6 +7,7 @@ import { ReactComponent as Heart } from "../../assets/heart.svg";
 import { ReactComponent as Bag } from "../../assets/bag.svg";
 import { ReactComponent as Profile } from "../../assets/profile.svg";
 import { ReactComponent as Arrow } from "../../assets/arrow.svg";
+import { ReactComponent as Hamburger } from "../../assets/hamburger.svg";
 
 function Navbar() {
   return (
@@ -23,7 +24,10 @@ function Navbar() {
         </div>
       </div>
       <div className={styles.logo}>
-        <Logo aria-label="Company Logo" />
+        <div className={styles.logos}>
+          <Hamburger aria-label="Menu" />
+          <Logo aria-label="Company Logo" />
+        </div>
         <h1 className={styles.heading}>LOGO</h1>
         <div className={styles.icons}>
           <Search aria-label="Search" />

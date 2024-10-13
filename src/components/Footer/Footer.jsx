@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Footer.module.css";
 import { ReactComponent as USA } from "../../assets/usa.svg";
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
@@ -9,8 +9,12 @@ import { ReactComponent as Paypal } from "../../assets/paypal.svg";
 import { ReactComponent as Amex } from "../../assets/amex.svg";
 import { ReactComponent as ApplePay } from "../../assets/apple.svg";
 import { ReactComponent as ShopPay } from "../../assets/shoppay.svg";
+import { ReactComponent as Arrow } from "../../assets/arrow2.svg";
 
 function Footer() {
+  const [isMettMuseOpen, setMettMuseOpen] = useState(false);
+  const [isQuickLinksOpen, setQuickLinksOpen] = useState(false);
+  const [isFollowUsOpen, setFollowUsOpen] = useState(false);
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -33,11 +37,15 @@ function Footer() {
         <section className={styles.contactWrapper}>
           <div className={styles.contact}>
             <h2 className={styles.heading}>CONTACT US</h2>
-            <div className={styles.text} aria-label="Phone number">
-              +44 221 133 5360
-            </div>
-            <div className={styles.text} aria-label="Email address">
-              customercare@mettamuse.com
+            <div className={styles.textWrapper}>
+              <div className={styles.text} aria-label="Phone number">
+                +44 221 133 5360{" "}
+                <span className={styles.diamond}>&nbsp;◆ &nbsp;</span>
+              </div>
+
+              <div className={styles.text} aria-label="Email address">
+                customercare@mettamuse.com
+              </div>
             </div>
           </div>
           <div className={styles.currency}>
@@ -45,7 +53,7 @@ function Footer() {
             <div className={styles.currencyText}>
               <USA /> ◆ USD
             </div>
-            <div className={styles.text}>
+            <div className={styles.textHide}>
               Transactions will be completed in Euros and a currency reference
               is available on hover.
             </div>
@@ -56,8 +64,18 @@ function Footer() {
       <div className={styles.menu}>
         <div className={styles.menu1}>
           <div className={styles.submenu}>
-            <h2 className={styles.heading}>mettā muse</h2>
-            <ul className={styles.list}>
+            <h2 className={styles.heading}>
+              mettā muse{" "}
+              <Arrow
+                className={styles.downArrow}
+                onClick={() => setMettMuseOpen(!isMettMuseOpen)}
+              />{" "}
+            </h2>
+            <ul
+              className={`${styles.list} ${
+                isMettMuseOpen ? styles.showContent : styles.hideContent
+              }`}
+            >
               <li>About</li>
               <li>Stories</li>
               <li>Artisans</li>
@@ -67,8 +85,18 @@ function Footer() {
             </ul>
           </div>
           <div className={styles.submenu}>
-            <h2 className={styles.heading}>QUICK LINKS</h2>
-            <ul className={styles.list}>
+            <h2 className={styles.heading}>
+              QUICK LINKS{" "}
+              <Arrow
+                className={styles.downArrow}
+                onClick={() => setQuickLinksOpen(!isQuickLinksOpen)}
+              />
+            </h2>
+            <ul
+              className={`${styles.list} ${
+                isQuickLinksOpen ? styles.showContent : styles.hideContent
+              }`}
+            >
               <li>Orders & Shipping</li>
               <li>Join/Login as a Seller</li>
               <li>Payment & Pricing</li>
@@ -82,8 +110,18 @@ function Footer() {
         <div className={styles.menu2}>
           <div className={styles.payWrapper}>
             <div className={styles.contact}>
-              <h2 className={styles.heading}>FOLLOW US</h2>
-              <div className={styles.currencyText}>
+              <h2 className={styles.heading}>
+                FOLLOW US{" "}
+                <Arrow
+                  className={styles.downArrow}
+                  onClick={() => setFollowUsOpen(!isFollowUsOpen)}
+                />{" "}
+              </h2>
+              <div
+                className={`${styles.currencyText} ${
+                  isFollowUsOpen ? styles.showContent : styles.hideContent
+                }`}
+              >
                 <Instagram aria-label="Instagram" />{" "}
                 <LinkedIn aria-label="LinkedIn" />
               </div>
